@@ -1,0 +1,30 @@
+button{
+  background-color: #1284b7;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 31px;
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 70%;
+}
+ button:hover{
+  background-color: #53bbec;
+  color: #0b5095;
+}
+.add-button{
+  margin-left: 50%;
+  margin-top: 5%;
+}
+form{
+  margin-left: 25%;
+  margin-top: 5%;
+  width: 50%;
+}
+h1{
+  text-align: center;
+  margin-top: 5%;
+}
