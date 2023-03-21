@@ -3,25 +3,42 @@
 <form>
 
   <!-- Name of Event input -->
-  <div class="form-outline mb-4">
-    <input type="text" id="form1Example1" class="form-control" placeholder="Name"/>
+  <div class="form-outline mb-4 name" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of event">
+    </mat-form-field>
   </div>
+
 
   <!-- Location input -->
-  <div class="form-outline mb-4">
-    <input type="text" id="form1Example2" class="form-control" placeholder="Location"/>
+  <div class="form-outline mb-4 location">
+    <mat-form-field appearance="fill">
+      <mat-label>Location</mat-label>
+      <select matNativeControl required>
+        <option value="volvo">Wilhelmsburg</option>
+        <option value="saab">Harburg</option>
+        <option value="mercedes">Altona</option>
+        <option value="audi">Wandsbeck</option>
+      </select>
+    </mat-form-field>
   </div>
-  <!-- Date input -->
 
-  <mat-form-field appearance="fill">
-    <mat-label>Choose a date</mat-label>
+  <!-- Date input -->
+  <mat-form-field appearance="fill" class="datepicker">
     <input matInput [matDatepicker]="picker">
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
-
+<!--Text area-->
+  <div class="form-outline mb-4 textarea" >
+    <mat-form-field class="example-full-width">
+      <mat-label>About this event...</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+  </div>
   <!-- Submit button -->
   <div class="add-button">
     <button mat-fab extended
