@@ -1,5 +1,5 @@
 button{
-  background-color: #65b6da;
+  background-color: var(--bs-primary);
   color: white;
   border: none;
   padding: 5px;
@@ -12,8 +12,8 @@ button{
   border-radius: 70%;
 }
  button:hover{
-  background-color: #53bbec;
-  color: #0b5095;
+  background-color: white;
+  color: var(--bs-primary);
 }
 .add-button{
   margin-left: 50%;
@@ -52,4 +52,8 @@ mat-form-field {
 }
 .datepicker{
   display: inline-block;
+}
+.event{
+  margin-bottom: 5px;
+  transform: scale(2);
 }

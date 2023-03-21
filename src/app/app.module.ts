@@ -9,13 +9,17 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatMomentDateModule } from "@angular/material-moment-adapter"
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { AllEventsComponent } from './all-events/all-events.component';
+import { ContactComponent } from './contact/contact.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     EventComponent,
+    AllEventsComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
