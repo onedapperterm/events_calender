@@ -9,6 +9,8 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatMomentDateModule } from "@angular/material-moment-adapter"
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
     MatTooltipModule,
     MatDatepickerModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatMomentDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
