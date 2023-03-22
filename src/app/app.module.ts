@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { AllEventsComponent } from './all-events/all-events.component';
 import { ContactComponent } from './contact/contact.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ContactComponent } from './contact/contact.component';
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

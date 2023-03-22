@@ -1,13 +1,13 @@
 <div class="form">
   <h1>48h Wilhelmsburg <mat-icon class="event">event</mat-icon></h1>
 
-<form>
+<form (ngSubmit)="saveEvents()">
 
   <!-- Name of Event input -->
   <div class="form-outline mb-4 name" >
     <mat-form-field class="example-full-width">
       <mat-label>Name of event</mat-label>
-      <input matInput>
+      <input matInput [(ngModel)]="event.name">
     </mat-form-field>
   </div>
 
@@ -27,7 +27,7 @@
 
   <!-- Date input -->
   <mat-form-field appearance="fill" class="datepicker">
-    <input matInput [matDatepicker]="picker">
+    <input matInput [matDatepicker]="picker" [(ngModel)]="event.date">
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -37,13 +37,13 @@
   <div class="form-outline mb-4 textarea" >
     <mat-form-field class="example-full-width">
       <mat-label>About this event...</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="event.comment"></textarea>
     </mat-form-field>
   </div>
   <!-- Submit button -->
   <div class="add-button">
     <button mat-fab extended
-            matTooltip="Add Event">
+            matTooltip="Add Event"  type="submit">
       <mat-icon>add</mat-icon>
     </button>
   </div>
