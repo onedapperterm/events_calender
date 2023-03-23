@@ -1,0 +1,19 @@
+<div class="paper-container">
+  <div class="month-label">
+    {{months[date.getMonth()] | uppercase }}
+  </div>
+  <div class="week-container">
+    <div class="day-label" *ngFor="let day of week, let i = index" [class.day-selected]="date.getDay() == i"> {{day}} </div>
+  </div>
+
+  <div class="days-container">
+    <div class="day-container" 
+      *ngFor="let day of monthDays" 
+      [class.empty]="day == 0" 
+      [class.selected]="date.getDate() == day"
+      (click)="openNewEventDialog(day)"
+    > 
+      {{day}}
+    </div>
+  </div>
+</div>

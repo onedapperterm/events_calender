@@ -1,6 +1,27 @@
-.nav-link{
-  font-size: 20px;
+.example-spacer {
+  flex: 1 1 auto;
 }
-.nav-link:hover{
-  color: #d7d7d7
+
+.toolbar-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.link-active {
+  color: var(--accent);
+}
+
+.mat-toolbar {
+  background: #21212100;
+}
+
+.home-active {
+  display: none;
 }

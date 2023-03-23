@@ -1,0 +1,29 @@
+.event-card-container {
+  display: flex;
+  align-items: normal;
+  padding: 10px;
+}
+
+.event-image {
+  width: 150px;
+  height: 150px;
+  background-image: linear-gradient( 160deg, hsl(214deg 90% 69%) 10%, hsl(219deg 90% 72%) 38%, hsl(225deg 88% 75%) 49%, hsl(234deg 85% 77%) 57%, hsl(244deg 81% 78%) 63%, hsl(255deg 77% 77%) 69%, hsl(265deg 72% 76%) 73%, hsl(276deg 66% 74%) 77%, hsl(287deg 61% 72%) 80%, hsl(298deg 55% 70%) 84%, hsl(309deg 63% 71%) 87%, hsl(317deg 74% 72%) 91%, hsl(324deg 84% 73%) 100% );
+  border-radius: 15px;
+}
+
+.event-date {
+  margin-left: auto;
+}
+
+.middle-content {
+  padding: 15px;
+  max-width: 800px;
+}
+
+.event-title {
+  font-size: 2rem;
+}
+
+.event-description {
+  margin-top: 15px;
+}

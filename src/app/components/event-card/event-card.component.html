@@ -1,0 +1,10 @@
+<div class="event-card-container" *ngIf="event">
+  <picture class="event-image">
+    <img src="" alt="">
+  </picture>
+  <div class="middle-content">
+    <div class="event-title">{{event.name}}</div>
+    <div class="event-description">{{event.description}}</div>
+  </div>
+  <div class="event-date">{{event.date | date}}</div>
+</div>

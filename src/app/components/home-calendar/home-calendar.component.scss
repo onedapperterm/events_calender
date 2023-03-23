@@ -1,0 +1,100 @@
+.paper-container {
+  width: 50vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--dark);
+  // background: white;
+  border-radius: 0 0 30px 30px;
+  padding: 20px;
+
+  box-shadow: 0 0 2px 0 #f4f4f64a inset, 0em 100px 500px -5px rgba(255, 255, 255, 0.4), -1em 1em 3em 1em rgba(255, 255, 255, 0.2), -5em 1em 30em 1em rgba(255, 255, 255, 0.2), 0em 2px 0 rgba(255, 255, 255, 0.7), 0em 10px 50px -10px rgba(255, 255, 255, 0.4), 1.2em -0.8em 2em 0em #48484800, 5.5em -1em 50em 0em #5e5e5e14, 0px -5px 25px 0px #9d9d9d42;
+
+  background: #e8e8ea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e8e8ea 0%, #efefef 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8ea), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e8e8ea 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e8e8ea 0%,#efefef 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e8e8ea 0%,#efefef 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #e8e8ea 0%,#efefef 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8ea', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+
+.month-label {
+  font-size: 2rem;
+  line-height: normal;
+  text-align: center;
+  color: var(--warn);
+}
+
+.week-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0px;
+}
+
+.day-label {
+  font-size: 2rem;
+  line-height: normal;
+}
+
+.day-selected {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.days-container {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.days-container {
+  text-align: center;
+  height: 100%;
+}
+
+.day-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.day-container:not(.selected):hover {
+  color: var(--accent);
+  font-weight: bold;
+  border: 2px var(--accent) solid inset;
+  border-radius: 30px;
+}
+
+.empty {
+  opacity: 0;
+  cursor: default;
+}
+
+.selected {
+  color: white;
+  background: var(--accent);
+  border-radius: 21% 79% 25% 75% / 73% 20% 80% 27%;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
