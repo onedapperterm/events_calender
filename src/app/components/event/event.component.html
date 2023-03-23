@@ -1,13 +1,13 @@
 <div class="form">
   <h1>New Event</h1>
 
-<form>
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
 
   <!-- Name of Event input -->
   <div class="form-outline mb-4 name" >
     <mat-form-field class="example-full-width">
       <mat-label>Name of event</mat-label>
-      <input matInput>
+      <input matInput type="text" formControlName="name">
     </mat-form-field>
   </div>
 
@@ -16,7 +16,7 @@
   <div class="form-outline mb-4 location">
     <mat-form-field appearance="fill">
       <mat-label>Location</mat-label>
-      <select matNativeControl required>
+      <select matNativeControl required formControlName="location">
         <option value="volvo">Wilhelmsburg</option>
         <option value="saab">Harburg</option>
         <option value="mercedes">Altona</option>
@@ -27,7 +27,7 @@
 
   <!-- Date input -->
   <mat-form-field appearance="fill" class="datepicker">
-    <input matInput [matDatepicker]="picker">
+    <input matInput [matDatepicker]="picker" formControlName="date">
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -37,7 +37,7 @@
   <div class="form-outline mb-4 textarea" >
     <mat-form-field class="example-full-width">
       <mat-label>About this event...</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
     </mat-form-field>
   </div>
   <!-- Submit button -->

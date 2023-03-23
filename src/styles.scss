@@ -158,3 +158,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -ms-overflow-style: none;
   ::-webkit-scrollbar { display: none; }
 }
+
+
+.mat-calendar-body-label{
+     opacity: 0;
+}
+
+.mat-calendar-body-label[colspan="7"] {
+    display: none;
+}

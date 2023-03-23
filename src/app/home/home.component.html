@@ -12,8 +12,11 @@
   </div>
 </div>
 
-<div class="home-container">
-  <div class="calendar-card">
-    <app-home-calendar></app-home-calendar>
-  </div>
+<div class="home-calender-container">
+  <h1 class="calendar-title">ENTDECKE</h1>
+  <app-home-calendar class="home-calender"></app-home-calendar>
+  <h1 class="calendar-title">DIE INSEL</h1>
+</div>
+<div class="events-container">
+  <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
 </div>
