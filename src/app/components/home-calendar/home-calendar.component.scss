@@ -29,6 +29,25 @@
 }
 
 
+.calendar-button {
+  font-size: 3rem;
+  margin: 0;
+  line-height: normal;
+  letter-spacing: -2px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.calendar-button:hover {
+  background-color: var(--accent);
+}
+
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

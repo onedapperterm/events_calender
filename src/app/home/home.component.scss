@@ -1,11 +1,20 @@
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: 10px;
+}
+
 .lateral-message-container {
-  height: 55vh;
-  position: fixed;
+  position: sticky;
+  top: 65px;
+  height: 80vh;
   transform: translateY(-64px);
   padding: 20% 20px 10px 20px;
-  width: 250px;
   color: var(--dark);
   border-radius: 0 0 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-image: linear-gradient(
     160deg,
     hsl(49deg 33% 84%) 10%,
@@ -21,7 +30,11 @@
     hsl(58deg 3% 70%) 87%,
     hsl(59deg 2% 68%) 91%,
     hsl(60deg 1% 67%) 100%
-    );
+  );
+}
+
+.relative-sticky-wrapper {
+  position: relative;
 }
 
 .home-title {
@@ -38,24 +51,17 @@
 }
 
 .events-container {
-  width: 45vw;
-  right: 15px;
-  position: absolute;
   z-index: -1;
 }
 
 .home-calender-container {
-  position: fixed;
-  left: 320px
+  position: sticky;
+  top: 65px;
 }
 
 .calendar-title {
   font-size: 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 15px;
-  border-radius: 10px;
   margin: 0;
-
   line-height: normal;
   letter-spacing: -2px;
   font-weight: bold;

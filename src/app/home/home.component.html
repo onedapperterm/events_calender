@@ -1,22 +1,28 @@
-<div class="lateral-message-container">
-  <div class="home-title">
-    ELB <br>
-    INSEL <br>
-    CALENDER
+<div class="home-container">
+
+  <div class="relative-sticky-wrapper ">
+    <div class="lateral-message-container">
+      <div class="home-title">
+        ELB <br>
+        INSEL <br>
+        CALENDER
+      </div>
+
+      <div class="welcome-message">
+        Der besten Möglichkeit, kulturelle Veranstaltungen
+        in deiner Stadt zu entdecken und zu genießen. Schaue in unseren kuratierten
+        Kalendern mit Konzerten, Festivals, Ausstellungen und mehr.
+      </div>
+    </div>
   </div>
 
-  <div class="welcome-message">
-    Der besten Möglichkeit, kulturelle Veranstaltungen 
-    in deiner Stadt zu entdecken und zu genießen. Schaue in unseren kuratierten 
-    Kalendern mit Konzerten, Festivals, Ausstellungen und mehr. 
+  <div class="relative-sticky-wrapper ">
+    <div class="home-calender-container">
+      <h1 class="calendar-title">ENTDECKE DIE INSEL</h1>
+      <app-home-calendar class="home-calender"></app-home-calendar>
+    </div>
   </div>
-</div>
-
-<div class="home-calender-container">
-  <h1 class="calendar-title">ENTDECKE</h1>
-  <app-home-calendar class="home-calender"></app-home-calendar>
-  <h1 class="calendar-title">DIE INSEL</h1>
-</div>
-<div class="events-container">
-  <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+  <div class="events-container">
+    <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+  </div>
 </div>
