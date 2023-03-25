@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component'
 import { HomeComponent } from './home/home.component'
 import { HomeCalendarComponent } from './components/home-calendar/home-calendar.component'
 import { EventCardComponent } from './components/event-card/event-card.component'
+import { LoginAdminComponent } from './login-admin/login-admin.component'
 //MATERIAL MODULES
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatInputModule } from '@angular/material/input'
@@ -22,7 +23,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter'
 import { MatButtonModule } from '@angular/material/button'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatDialogModule } from '@angular/material/dialog'
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatCardModule } from '@angular/material/card'
     HomeComponent,
     HomeCalendarComponent,
     EventCardComponent,
+    LoginAdminComponent,
   ],
   imports: [
     BrowserModule,
