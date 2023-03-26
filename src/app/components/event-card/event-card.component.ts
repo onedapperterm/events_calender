@@ -9,4 +9,8 @@ import { CityEvent } from 'src/app/model/interfaces/event.interface';
 export class EventCardComponent {
   @Input() event!: CityEvent;
 
+  toEditEvent(){
+    console.log("Ji")
+  }
+
 }

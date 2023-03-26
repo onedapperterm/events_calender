@@ -1,10 +1,12 @@
-<div class="event-card-container" *ngIf="event">
+<div class="event-card-container" *ngIf="event" (click)="toEditEvent()">
   <picture class="event-image">
-    <img src="" alt="">
+    <img :src="event.img" alt="">
   </picture>
   <div class="middle-content">
     <div class="event-title">{{event.name}}</div>
     <div class="event-description">{{event.description}}</div>
   </div>
+  <div class="event-date">{{event.location}}</div>
+
   <div class="event-date">{{event.date | date}}</div>
 </div>

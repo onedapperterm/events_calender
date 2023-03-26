@@ -25,6 +25,8 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card';
 
+import { DatePipe } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { MatCardModule } from '@angular/material/card';
     HomeCalendarComponent,
     EventCardComponent,
     LoginAdminComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,7 @@ import { MatCardModule } from '@angular/material/card';
     MatDialogModule,
     MatCardModule,
   ],
-  providers: [],
+  providers: [ DatePipe,],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
