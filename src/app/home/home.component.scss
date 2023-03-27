@@ -51,12 +51,17 @@
 }
 
 .events-container {
+  min-width: 32vw;
   z-index: -1;
 }
 
 .home-calender-container {
   position: sticky;
   top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .calendar-title {
@@ -67,4 +72,5 @@
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
   text-align: center;
+  width: 32vw;
 }

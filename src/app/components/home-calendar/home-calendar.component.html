@@ -1,6 +1,6 @@
 <div class="calender-container">
   <mat-card class="inline-calendar-card">
-    <mat-calendar [(selected)]="date"></mat-calendar>
+    <mat-calendar [(selected)]="date" (selectedChange)="setDate($event)"></mat-calendar>
   </mat-card>
 </div>
 <h1 class="calendar-button" (click)="openNewEventDialog()">ADD NEW EVENT</h1>

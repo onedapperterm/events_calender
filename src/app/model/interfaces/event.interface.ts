@@ -3,7 +3,16 @@ export interface CityEvent {
   name: string;
   date: Date;
   description: string;
-  image?: string;
+  imageUrl?: string;
+  location: string;
 }
 
-export interface CreateCityEvent extends Omit <CityEvent, 'id'>{}
+export interface CityEventDto {
+  id?: number;
+  name: string;
+  dateString: string;
+  description: string;
+  image?: string;
+  location: string;
+}
+

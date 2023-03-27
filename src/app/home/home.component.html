@@ -19,10 +19,11 @@
   <div class="relative-sticky-wrapper ">
     <div class="home-calender-container">
       <h1 class="calendar-title">ENTDECKE DIE INSEL</h1>
-      <app-home-calendar class="home-calender"></app-home-calendar>
+      <app-home-calendar class="home-calender" (dateSelected)="filterEventsByDate($event)"></app-home-calendar>
     </div>
   </div>
   <div class="events-container">
+    <mat-hint *ngIf="events.length == 0">No events this day</mat-hint>
     <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
   </div>
 </div>

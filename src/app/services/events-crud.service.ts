@@ -1,21 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CityEvent } from '../model/interfaces/event.interface';
+import { map, Observable } from 'rxjs';
+import { CityEvent, CityEventDto } from '../model/interfaces/event.interface';
+import { CityEventConverter } from '../util/city-event.converter';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventsCrudService {
-  private readonly API_GATWAY:string = "https://localhost:8000"
+  private readonly API_GATWAY:string = "http://localhost:8000"
 
   constructor(private _httpClient: HttpClient) { }
 
-  public createEvent(event: CityEvent): Observable<CityEvent> {
-    return this._httpClient.put<CityEvent>(`${this.API_GATWAY}/save`, event);
+  public createEvent(event: CityEvent): Observable<CityEventDto> {
+    return this._httpClient.post<CityEventDto>(`${this.API_GATWAY}/saveEvent`, CityEventConverter.cityEvent2Dto(event));
   }
 
   public updateEvent(event: CityEvent): Observable<CityEvent> {
     return this._httpClient.patch<CityEvent>(`${this.API_GATWAY}/edit`, event);
   }
+
+  public getEvents():Observable<CityEvent[]> {
+    return this._httpClient.get<CityEventDto[]>(`${this.API_GATWAY}/getEvents`)
+      .pipe(
+        map(res => CityEventConverter.convertDtoList(res)),
+      )
+  }
+
 }

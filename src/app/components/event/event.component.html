@@ -1,51 +1,58 @@
 <div class="form">
   <h1>New Event</h1>
 
-<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
 
-  <!-- Name of Event input -->
-  <div class="form-outline mb-4 name" >
-    <mat-form-field class="example-full-width">
-      <mat-label>Name of event</mat-label>
-      <input matInput type="text" formControlName="name">
+    <!-- Name of Event input -->
+    <div class="form-outline mb-4 name">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name of event</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+    </div>
+
+    <!-- Location input -->
+    <div class="form-outline mb-4 location">
+      <mat-form-field appearance="fill">
+        <mat-label>Location</mat-label>
+        <select matNativeControl required formControlName="location">
+          <option value="volvo">Wilhelmsburg</option>
+          <option value="saab">Harburg</option>
+          <option value="mercedes">Altona</option>
+          <option value="audi">Wandsbeck</option>
+        </select>
+      </mat-form-field>
+    </div>
+
+    <!-- Date input -->
+    <mat-form-field appearance="fill" class="datepicker">
+      <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-  </div>
 
+    <!-- image input -->
+    <div class="form-outline mb-4 name">
+      <mat-form-field class="example-full-width">
+        <mat-label>URL image</mat-label>
+        <input matInput type="text" formControlName="image">
+      </mat-form-field>
+    </div>
 
-  <!-- Location input -->
-  <div class="form-outline mb-4 location">
-    <mat-form-field appearance="fill">
-      <mat-label>Location</mat-label>
-      <select matNativeControl required formControlName="location">
-        <option value="volvo">Wilhelmsburg</option>
-        <option value="saab">Harburg</option>
-        <option value="mercedes">Altona</option>
-        <option value="audi">Wandsbeck</option>
-      </select>
-    </mat-form-field>
-  </div>
+    <!--Text area-->
+    <div class="form-outline mb-4 textarea">
+      <mat-form-field class="example-full-width">
+        <mat-label>About this event...</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
 
-  <!-- Date input -->
-  <mat-form-field appearance="fill" class="datepicker">
-    <input matInput [matDatepicker]="picker" formControlName="date">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-
-<!--Text area-->
-  <div class="form-outline mb-4 textarea" >
-    <mat-form-field class="example-full-width">
-      <mat-label>About this event...</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
-    </mat-form-field>
-  </div>
-  <!-- Submit button -->
+    <!-- Submit button -->
     <button mat-flat-button color="accent" matTooltip="Add Event">
-      Event hinzufügen 
+      Event hinzufügen
       <mat-icon>add</mat-icon>
     </button>
-</form>
+
+  </form>
 </div>
-
-

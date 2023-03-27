@@ -26,6 +26,7 @@ export class EventComponent {
     this.eventForm = this._formBuilder.group({
       name: ['', Validators.required],
       date: [new Date, Validators.required],
+      image: [''],
       description: ['', Validators.required],
       location: ['', Validators.required]
     });
@@ -47,7 +48,7 @@ export class EventComponent {
 
   private createEvent():void {
     this._evntsCrudService.createEvent(this.event)
-    .subscribe(res => console.log(res))  //TODO:Check that  this sh*t works when Tuan´s Api is dode :P
+    .subscribe(res => console.log(res))  
   }
 
   private updateEvent():void {
