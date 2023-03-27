@@ -1,3 +1,9 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form{
   margin: auto;
   width: 60%;
@@ -38,4 +44,8 @@ mat-form-field {
 
 .datepicker{
   display: inline-block;
+}
+
+.delete-button {
+  margin-top: 10px;
 }

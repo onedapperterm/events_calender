@@ -17,7 +17,7 @@ export class EventsCrudService {
   }
 
   public updateEvent(event: CityEvent): Observable<CityEvent> {
-    return this._httpClient.patch<CityEvent>(`${this.API_GATWAY}/edit`, event);
+    return this._httpClient.post<CityEvent>(`${this.API_GATWAY}/saveEvent`, event);
   }
 
   public getEvents():Observable<CityEvent[]> {
@@ -25,6 +25,10 @@ export class EventsCrudService {
       .pipe(
         map(res => CityEventConverter.convertDtoList(res)),
       )
+  }
+
+  public deleteEvent(eventId: number) {
+    return this._httpClient.delete(`${this.API_GATWAY}/deleteEventBy/${eventId}`);
   }
 
 }

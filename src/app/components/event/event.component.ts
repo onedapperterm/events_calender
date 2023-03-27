@@ -12,6 +12,7 @@ import { EventsCrudService } from 'src/app/services/events-crud.service';
 export class EventComponent {
   private event!: CityEvent;
   public eventForm!: UntypedFormGroup;
+  public mode: 'create' | 'edit' = 'create';
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: {date?: Date, event?: CityEvent},
@@ -26,34 +27,42 @@ export class EventComponent {
     this.eventForm = this._formBuilder.group({
       name: ['', Validators.required],
       date: [new Date, Validators.required],
-      image: [''],
+      imageUrl: [''],
       description: ['', Validators.required],
-      location: ['', Validators.required]
+      location: ['', Validators.required],
+      id: [null]
     });
   }
 
   private setFormData():void {
     if (this.data.date) this.eventForm.patchValue({'date': this.data.date})
-    else if (this.data.event) this.eventForm.setValue(this.data.event)
+    else if (this.data.event) {
+      this.eventForm.setValue(this.data.event);
+      this.mode = 'edit';
+    }
     this.event = this.eventForm.getRawValue();
   }
 
-
   public onSubmit():void {
     this.event = {...this.event, ...this.eventForm.getRawValue()};
-    console.log(this.event)
-    if ('id' in this.event) this.updateEvent();
+    if (this.mode == 'edit') this.updateEvent();
     else this.createEvent();
+  }
+
+  public onDelete():void {
+    if(this.event.id) this._evntsCrudService.deleteEvent(this.event.id)
+      .subscribe();
   }
 
   private createEvent():void {
     this._evntsCrudService.createEvent(this.event)
-    .subscribe(res => console.log(res))  
+      .subscribe(res => console.log(res))  
   }
-
+  
   private updateEvent():void {
+    console.log(this.event)
     this._evntsCrudService.updateEvent(this.event)
-    .subscribe(res => console.log(res))  //TODO:Check that  this sh*t works when Tuan´s Api is dode :P
+      .subscribe(res => console.log(res))  
   }
 
 }

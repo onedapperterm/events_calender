@@ -12,9 +12,13 @@
   border-radius: 15px;
 }
 
-.event-date {
+.end-content {
   min-width: 110px;
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
 }
 
 .middle-content {

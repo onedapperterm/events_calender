@@ -6,5 +6,8 @@
     <div class="event-title">{{event.name}}</div>
     <div class="event-description">{{event.description}}</div>
   </div>
-  <div class="event-date">{{event.date | date}}</div>
+  <div class="end-content">
+    <div class="event-date">{{event.date | date}}</div>
+    <button mat-flat-button color="primary" type="button" (click)="openEventDialog()">bearbeiten</button>
+  </div>
 </div>

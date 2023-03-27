@@ -1,7 +1,7 @@
 <div class="form">
   <h1>New Event</h1>
 
-  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="eventForm">
 
     <!-- Name of Event input -->
     <div class="form-outline mb-4 name">
@@ -36,7 +36,7 @@
     <div class="form-outline mb-4 name">
       <mat-form-field class="example-full-width">
         <mat-label>URL image</mat-label>
-        <input matInput type="text" formControlName="image">
+        <input matInput type="text" formControlName="imageUrl">
       </mat-form-field>
     </div>
 
@@ -48,11 +48,20 @@
       </mat-form-field>
     </div>
 
-    <!-- Submit button -->
-    <button mat-flat-button color="accent" matTooltip="Add Event">
-      Event hinzufügen
-      <mat-icon>add</mat-icon>
-    </button>
 
   </form>
+
+  <!-- Submit button -->
+  <button mat-flat-button color="accent" matTooltip="Add Event" (click)="onSubmit()" [mat-dialog-close]>
+    <div *ngIf="mode == 'create'">
+      Event hinzufügen
+    </div>
+    <div *ngIf="mode == 'edit'">
+      Speichern
+    </div>
+  </button>
+  <button mat-flat-button class="delete-button" color="warn" matTooltip="Delete Event" *ngIf="mode == 'edit'" (click)="onDelete()" [mat-dialog-close]>
+    Löschen
+  </button>
+
 </div>
