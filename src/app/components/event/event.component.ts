@@ -30,6 +30,7 @@ export class EventComponent {
       imageUrl: [''],
       description: ['', Validators.required],
       location: ['', Validators.required],
+      tag: [''],
       id: [null]
     });
   }
