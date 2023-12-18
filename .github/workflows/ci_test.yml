@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Testing
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -9,12 +9,21 @@ on:
   workflow_dispatch:
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  fe_test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Moin Moin"
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.1
+        with:
+          # Set always-auth in npmrc.
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          # File containing the version Spec of the version to use.  Examples: package.json, .nvmrc, .node-version, .tool-versions.
+          node-version-file: package.json
+      - name: Run unit tests
+        run: ng test
+      - name: Say done
+        run: echo "done :)"
