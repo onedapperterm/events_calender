@@ -24,7 +24,8 @@ export abstract class CityEventConverter {
       dateString: event.date.toString(),
       description: event.description,
       image: event.imageUrl,
-      location: event.location
+      location: event.location,
+      tag: event.tag
     }
   }
 }

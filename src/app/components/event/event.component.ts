@@ -38,7 +38,7 @@ export class EventComponent {
   private setFormData():void {
     if (this.data.date) this.eventForm.patchValue({'date': this.data.date})
     else if (this.data.event) {
-      this.eventForm.setValue(this.data.event);
+      this.eventForm.patchValue(this.data.event);
       this.mode = 'edit';
     }
     this.event = this.eventForm.getRawValue();

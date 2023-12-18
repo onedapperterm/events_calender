@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Output, } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialog } from '@angular/material/dialog';
 import { EventComponent } from '../event/event.component';
@@ -9,12 +9,16 @@ import { EventComponent } from '../event/event.component';
   templateUrl: './home-calendar.component.html',
   styleUrls: ['./home-calendar.component.scss']
 })
-export class HomeCalendarComponent {
+export class HomeCalendarComponent implements AfterViewInit{
   public date = new Date();
 
   @Output() dateSelected = new EventEmitter<Date>();
 
   constructor(private _dialog: MatDialog){}
+
+  ngAfterViewInit(): void {
+    this.dateSelected.emit(this.date)
+  }
 
   public openNewEventDialog():void {
     this._dialog.open(EventComponent, {

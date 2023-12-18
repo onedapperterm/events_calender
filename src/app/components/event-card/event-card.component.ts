@@ -10,6 +10,7 @@ import { EventComponent } from '../event/event.component';
 })
 export class EventCardComponent {
   @Input() event!: CityEvent;
+  @Input() edit: boolean = false;
 
   constructor(private _dialog: MatDialog){}
 

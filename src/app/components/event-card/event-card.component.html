@@ -9,6 +9,6 @@
   </div>
   <div class="end-content">
     <div class="event-date">{{event.date | date}}</div>
-    <button mat-flat-button color="primary" type="button" (click)="openEventDialog()">bearbeiten</button>
+    <button mat-flat-button *ngIf="edit" color="primary" type="button" (click)="openEventDialog()">bearbeiten</button>
   </div>
 </div>

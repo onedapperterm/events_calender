@@ -5,6 +5,7 @@ export interface CityEvent {
   description: string;
   imageUrl?: string;
   location: string;
+  tag?: string;
 }
 
 export interface CityEventDto {
@@ -14,5 +15,6 @@ export interface CityEventDto {
   description: string;
   image?: string;
   location: string;
+  tag?: string;
 }
 
