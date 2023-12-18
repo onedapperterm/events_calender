@@ -16,6 +16,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+      - name: check workspace
+        run: ls -la
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.1
         with:
