@@ -1,8 +1,12 @@
 name: Testing
-
+run-name: Angular Jasmine Unit Tests
 on:
   push:
+  pull_request:
+    branches: [master]
   workflow_dispatch:
+env:
+  ANGULAR_CLI_VERSION: 15
 jobs:
   fe_test:
     name: Frontend Test
@@ -14,6 +18,8 @@ jobs:
         uses: actions/setup-node@v4.0.1
         with:
           node-version-file: package.json
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli@$ANGULAR_CLI_VERSION
       - name: Install dependencies
         run: npm install
       - name: Run unit tests
