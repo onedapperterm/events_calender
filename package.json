@@ -1,6 +1,10 @@
 {
   "name": "kalendar-fe",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
