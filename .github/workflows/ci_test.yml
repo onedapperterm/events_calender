@@ -26,7 +26,7 @@ jobs:
         uses: nick-fields/retry@14672906e672a08bd6eeb15720e9ed3ce869cdd4
         with:
           max_attempts: 2
-          timeout_minutes: 5
-          command: ng test
+          timeout_minutes: 2
+          command: ng test --no-watch --no-progress --browsers=ChromeHeadless
       - name: Say done
         run: echo "done :)"
