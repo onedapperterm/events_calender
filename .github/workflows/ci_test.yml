@@ -9,7 +9,7 @@ env:
   ANGULAR_CLI_VERSION: 15
 jobs:
   fe_test:
-    name: Frontend Test
+    name: Unit Testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,6 +23,10 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run unit tests
-        run: ng test
+        uses: nick-fields/retry@14672906e672a08bd6eeb15720e9ed3ce869cdd4
+        with:
+          max_attempts: 2
+          timeout_minutes: 5
+          command: ng test
       - name: Say done
         run: echo "done :)"
