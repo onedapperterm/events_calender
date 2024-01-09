@@ -8,8 +8,9 @@ export abstract class CityEventConverter {
       name: dto.name,
       date: new Date(dto.dateString),
       description: dto.description,
-      imageUrl: dto.image,
-      location: dto.location
+      image: dto.image,
+      location: dto.location,
+      category: dto.category
     }
   }
 
@@ -23,7 +24,7 @@ export abstract class CityEventConverter {
       name: event.name,
       dateString: event.date.toString(),
       description: event.description,
-      image: event.imageUrl,
+      image: event.image,
       location: event.location,
       category: event.category
     }

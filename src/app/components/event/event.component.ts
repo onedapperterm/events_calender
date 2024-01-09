@@ -27,7 +27,7 @@ export class EventComponent {
     this.eventForm = this._formBuilder.group({
       name: ['', Validators.required],
       date: [new Date, Validators.required],
-      imageUrl: [''],
+      image: [''],
       description: ['', Validators.required],
       location: ['', Validators.required],
       category: [''],
