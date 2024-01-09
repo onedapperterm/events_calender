@@ -30,7 +30,7 @@ export class EventComponent {
       imageUrl: [''],
       description: ['', Validators.required],
       location: ['', Validators.required],
-      tag: [''],
+      category: [''],
       id: [null]
     });
   }
@@ -57,13 +57,13 @@ export class EventComponent {
 
   private createEvent():void {
     this._evntsCrudService.createEvent(this.event)
-      .subscribe(res => console.log(res))  
+      .subscribe(res => console.log(res))
   }
-  
+
   private updateEvent():void {
     console.log(this.event)
     this._evntsCrudService.updateEvent(this.event)
-      .subscribe(res => console.log(res))  
+      .subscribe(res => console.log(res))
   }
 
 }

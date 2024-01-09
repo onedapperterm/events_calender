@@ -25,7 +25,7 @@ export abstract class CityEventConverter {
       description: event.description,
       image: event.imageUrl,
       location: event.location,
-      tag: event.tag
+      category: event.category
     }
   }
 }
