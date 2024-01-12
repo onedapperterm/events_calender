@@ -1,29 +1,6 @@
 <div class="home-container">
-
-  <div class="relative-sticky-wrapper ">
-    <div class="lateral-message-container">
-      <div class="home-title">
-        ELB <br>
-        INSEL <br>
-        CALENDER
-      </div>
-
-      <div class="welcome-message">
-        Der besten Möglichkeit, kulturelle Veranstaltungen
-        in deiner Stadt zu entdecken und zu genießen. Schaue in unseren kuratierten
-        Kalendern mit Konzerten, Festivals, Ausstellungen und mehr.
-      </div>
-    </div>
-  </div>
-
-  <div class="relative-sticky-wrapper ">
-    <div class="home-calender-container">
-      <h1 class="calendar-title">ENTDECKE DIE INSEL</h1>
-      <app-home-calendar class="home-calender" (dateSelected)="filterEventsByDate($event)"></app-home-calendar>
-    </div>
-  </div>
-  <div class="events-container">
-    <mat-hint *ngIf="events.length == 0">No events this day</mat-hint>
-    <app-event-card *ngFor="let event of events" [event]="event"></app-event-card>
+  <div class="events-container" *ngIf="{data: events$ | async } as events">
+    <mat-hint *ngIf="events.data && events.data.length == 0">No events this day</mat-hint>
+    <app-event-card *ngFor="let event of events.data" [event]="event"></app-event-card>
   </div>
 </div>

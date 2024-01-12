@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
 import { CityEvent } from '../model/interfaces/event.interface'
 import { EventsCrudService } from '../services/events-crud.service'
 
@@ -8,23 +9,17 @@ import { EventsCrudService } from '../services/events-crud.service'
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  private allEvents: CityEvent[] = []
-  public events: CityEvent[] = []
+  public events$: Observable<CityEvent[]> = this._evntsCrudService.getEvents()
 
   constructor(private _evntsCrudService: EventsCrudService) {}
 
   ngOnInit(): void {
-    this.updateEvents();
-  }
-
-  private updateEvents():void {
-    this._evntsCrudService.getEvents()
-      .subscribe(events => this.allEvents = events);
   }
 
   public filterEventsByDate(date: Date): void {
-    this.events = this.allEvents.filter(event => isSameDay(event.date, date))
+    // this.events = this.allEvents.filter(event => isSameDay(event.date, date))
   }
+
 }
 
 function isSameDay(date1: Date, date2: Date): boolean {

@@ -1,0 +1,27 @@
+@import '../pages/general-page.scss';
+@import '../../util/media-mixins.scss';
+
+mat-sidenav-container {
+  --width: 35vw;
+  --max-width: 400px;
+
+  @extend .full-page-container;
+
+  .mat-drawer {
+
+    &.mat-drawer-side {
+      width: var(--width);
+      max-width: var(--max-width);
+      padding-top: 60px
+    }
+
+  }
+
+  .mat-drawer-content {
+    padding: 76px 16px 16px 16px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+}
+

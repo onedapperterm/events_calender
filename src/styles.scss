@@ -124,7 +124,7 @@ $Kalendar_FE-warn: mat.define-palette($my-warn);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Kalendar_FE-theme: mat.define-dark-theme((
+$Kalendar_FE-theme: mat.define-light-theme((
   color: (
     primary: $Kalendar_FE-primary,
     accent: $Kalendar_FE-accent,
@@ -143,6 +143,8 @@ $Kalendar_FE-theme: mat.define-dark-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+@import './scss/index.scss';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root {
@@ -151,14 +153,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --warn: #e24d65;
   --dark: #303030;
 }
-
-.mat-mdc-dialog-container .mdc-dialog__surface {
-  border-radius: 30px !important;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  ::-webkit-scrollbar { display: none; }
-}
-
 
 .mat-calendar-body-label{
      opacity: 0;

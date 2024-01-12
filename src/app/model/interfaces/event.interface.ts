@@ -1,9 +1,9 @@
 export interface CityEvent {
   id?: number;
   name: string;
-  date: Date;
+  date: Date | string;
   description: string;
-  imageUrl?: string;
+  image?: string;
   location: string;
   category?: string;
 }
@@ -11,7 +11,7 @@ export interface CityEvent {
 export interface CityEventDto {
   id?: number;
   name: string;
-  dateString: string;
+  date: string;
   description: string;
   image?: string;
   location: string;

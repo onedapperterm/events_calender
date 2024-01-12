@@ -6,10 +6,11 @@ export abstract class CityEventConverter {
     return {
       id: dto.id,
       name: dto.name,
-      date: new Date(dto.dateString),
+      date: new Date(dto.date),
       description: dto.description,
-      imageUrl: dto.image,
-      location: dto.location
+      image: dto.image,
+      location: dto.location,
+      category: dto.category
     }
   }
 
@@ -21,9 +22,9 @@ export abstract class CityEventConverter {
     return {
       id: event.id,
       name: event.name,
-      dateString: event.date.toString(),
+      date: event.date.toString(),
       description: event.description,
-      image: event.imageUrl,
+      image: event.image,
       location: event.location,
       category: event.category
     }

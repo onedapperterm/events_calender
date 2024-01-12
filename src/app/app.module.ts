@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component'
 import { EventComponent } from './components/event/event.component'
-import { AllEventsComponent } from './all-events/all-events.component'
 import { ContactComponent } from './contact/contact.component'
 import { HomeComponent } from './home/home.component'
 import { HomeCalendarComponent } from './components/home-calendar/home-calendar.component'
@@ -24,12 +23,13 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatCardModule } from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EventComponent,
-    AllEventsComponent,
     ContactComponent,
     HomeComponent,
     HomeCalendarComponent,
@@ -53,6 +53,7 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatDialogModule,
     MatCardModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
