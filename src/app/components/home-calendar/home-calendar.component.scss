@@ -1,62 +1,19 @@
-.paper-container {
-  width: 50vw;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  color: var(--dark);
-  border-radius: 0 0 30px 30px;
-  padding: 20px;
-  box-shadow: 0 0 2px 0 #f4f4f64a inset, 0em 100px 500px -5px rgba(255, 255, 255, 0.4), -1em 1em 3em 1em rgba(255, 255, 255, 0.2), -5em 1em 30em 1em rgba(255, 255, 255, 0.2), 0em 2px 0 rgba(255, 255, 255, 0.7), 0em 10px 50px -10px rgba(255, 255, 255, 0.4), 1.2em -0.8em 2em 0em #48484800, 5.5em -1em 50em 0em #5e5e5e14, 0px -5px 25px 0px #9d9d9d42;
-}
-
 .calender-container {
-  margin: 15px 0;
-  margin-right: 5%;
-  border-radius: 30px;
-  width: 35vw;
-  height: 35vw;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 20s ease infinite;
+  width: 100%;
   display: grid;
   justify-items: center;
 }
 
 .inline-calendar-card {
-  width: 32vw;
+  width: 100%;
   background-color: transparent;
   box-shadow: none;
 }
 
-
 .calendar-button {
-  font-size: 3rem;
-  margin: 0;
-  line-height: normal;
-  letter-spacing: -2px;
-  font-weight: bold;
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 32vw;
-}
-
-.calendar-button:hover {
-  background-color: var(--accent);
-}
-
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  letter-spacing: -0.4px;
+  width: 90%;
+  align-self: flex-end;
+  justify-self: center;
+  margin-bottom: 5ch;
 }

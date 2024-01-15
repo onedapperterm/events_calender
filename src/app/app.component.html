@@ -3,9 +3,17 @@
   <span class="example-spacer"></span>
   <div class="toolbar-links">
     <span routerLink="/home" routerLinkActive="link-active" aria-selected="false">Home</span>
-    <span routerLink="/all-events" routerLinkActive="link-active" aria-selected="false">Events</span>
     <span routerLink="/login" routerLinkActive="link-active" aria-selected="false">Login</span>
     <span routerLink="/contact" routerLinkActive="link-active" aria-selected="false">Kontakt</span>
   </div>
 </mat-toolbar>
-<router-outlet></router-outlet>
+
+<mat-sidenav-container hasBackdrop="false">
+  <mat-sidenav mode="side" opened>
+    <app-home-calendar></app-home-calendar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

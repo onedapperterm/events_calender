@@ -27,7 +27,7 @@ export class EventComponent {
     this.eventForm = this._formBuilder.group({
       name: ['', Validators.required],
       date: [new Date, Validators.required],
-      imageUrl: [''],
+      image: [''],
       description: ['', Validators.required],
       location: ['', Validators.required],
       category: [''],
@@ -36,7 +36,7 @@ export class EventComponent {
   }
 
   private setFormData():void {
-    if (this.data.date) this.eventForm.patchValue({'date': this.data.date})
+    if (this.data.date) this.eventForm.patchValue({'date': this.data.date});
     else if (this.data.event) {
       this.eventForm.patchValue(this.data.event);
       this.mode = 'edit';
@@ -46,6 +46,7 @@ export class EventComponent {
 
   public onSubmit():void {
     this.event = {...this.event, ...this.eventForm.getRawValue()};
+    this.event.date = this.event.date;
     if (this.mode == 'edit') this.updateEvent();
     else this.createEvent();
   }
@@ -56,13 +57,14 @@ export class EventComponent {
   }
 
   private createEvent():void {
-    this._evntsCrudService.createEvent(this.event)
+    this._evntsCrudService
+      .createEvent(this.event)
       .subscribe(res => console.log(res))
   }
 
   private updateEvent():void {
-    console.log(this.event)
-    this._evntsCrudService.updateEvent(this.event)
+    this._evntsCrudService
+      .updateEvent(this.event)
       .subscribe(res => console.log(res))
   }
 

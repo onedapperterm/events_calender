@@ -1,15 +1,31 @@
 import { TestBed } from '@angular/core/testing';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HomeCalendarComponent } from './components/home-calendar/home-calendar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        MatCardModule,
+        MatDatepickerModule,
+        MatMomentDateModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HomeCalendarComponent
       ],
     }).compileComponents();
   });
@@ -26,10 +42,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Kalendar_FE');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Kalendar_FE app is running!');
-  });
 });

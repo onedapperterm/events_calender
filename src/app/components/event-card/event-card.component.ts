@@ -17,7 +17,6 @@ export class EventCardComponent {
   public openEventDialog():void {
     this._dialog.open(EventComponent, {
       data: {event: this.event},
-      height: '650px'
     })
   }
 }

@@ -3,7 +3,7 @@ export interface CityEvent {
   name: string;
   date: Date;
   description: string;
-  imageUrl?: string;
+  image?: string;
   location: string;
   category?: string;
 }
@@ -11,7 +11,7 @@ export interface CityEvent {
 export interface CityEventDto {
   id?: number;
   name: string;
-  dateString: string;
+  date: string;
   description: string;
   image?: string;
   location: string;

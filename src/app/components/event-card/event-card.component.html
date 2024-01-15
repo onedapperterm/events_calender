@@ -1,14 +1,20 @@
-<div class="event-card-container" *ngIf="event">
-  <picture class="event-image">
-    <img class="event-image" [src]="event.imageUrl" alt="">
-  </picture>
-  <div class="middle-content">
-    <div class="event-title">{{event.name}}</div>
-    <div class="event-location">{{event.location}}</div>
-    <div class="event-description">{{event.description}}</div>
-  </div>
-  <div class="end-content">
-    <div class="event-date">{{event.date | date}}</div>
-    <button mat-flat-button *ngIf="edit" color="primary" type="button" (click)="openEventDialog()">bearbeiten</button>
-  </div>
-</div>
+<mat-card class="example-card" *ngIf="event">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{event.name}}</mat-card-title>
+      <mat-card-subtitle>
+        {{event.location}}
+        <span *ngIf="event.date" class="event-date"> - {{event.date | date}}</span>
+      </mat-card-subtitle>
+      <img mat-card-lg-image class="event-image" [src]="event.image" alt="">
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{ event.category }}
+    <br/>
+    {{ event.description }}
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-flat-button type="button" (click)="openEventDialog()">bearbeiten</button>
+  </mat-card-actions>
+</mat-card>
