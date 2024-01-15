@@ -1,7 +1,7 @@
 export interface CityEvent {
   id?: number;
   name: string;
-  date: Date | string;
+  date: Date;
   description: string;
   image?: string;
   location: string;

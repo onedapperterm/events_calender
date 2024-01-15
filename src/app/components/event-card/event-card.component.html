@@ -4,12 +4,14 @@
       <mat-card-title>{{event.name}}</mat-card-title>
       <mat-card-subtitle>
         {{event.location}}
-        <span *ngIf="event.date != 'Invalid Date'" class="event-date"> - {{event.date | date}}</span>
+        <span *ngIf="event.date" class="event-date"> - {{event.date | date}}</span>
       </mat-card-subtitle>
       <img mat-card-lg-image class="event-image" [src]="event.image" alt="">
     </mat-card-title-group>
   </mat-card-header>
   <mat-card-content>
+    {{ event.category }}
+    <br/>
     {{ event.description }}
   </mat-card-content>
   <mat-card-actions align="end">

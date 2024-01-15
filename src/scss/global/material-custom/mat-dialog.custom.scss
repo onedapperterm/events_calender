@@ -1,0 +1,21 @@
+.cdk-overlay-pane {
+  max-width: unset !important;
+}
+
+mat-dialog-container {
+
+  &.mat-mdc-dialog-container {
+    position: absolute;
+    top: 20vh;
+    height: 80vh;
+    // border-radius: 30px;
+
+  }
+
+  .mdc-dialog__container {
+    .mat-mdc-dialog-surface  {
+      border-radius: 15px 15px 0px 0px;
+      box-shadow: 0px -100ch 50px 100ch rgba(0,0,0,0.6);
+    }
+  }
+}

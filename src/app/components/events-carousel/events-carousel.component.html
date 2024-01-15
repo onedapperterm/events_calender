@@ -1,0 +1,18 @@
+<ng-container *ngIf="{events: events, offset: offset$ | async } as data">
+  <ng-container *ngIf="data.events">
+    <ng-container *ngFor="let event of events; index as i">
+      <div class="card-header-container"
+        [ngStyle]="{
+        backgroundImage: 'url(' + event.image +')',
+        marginLeft: i == 1 ? data.offset : 0
+        }"
+      >
+        <div class="backdrop-wrap">
+          <h1 class="event-title">{{event.name}}</h1>
+          <div *ngIf="event.date" class="event-date"> {{event.date | date}}</div>
+          <div class="category-badge">{{ event.category }}</div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</ng-container>

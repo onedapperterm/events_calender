@@ -22,7 +22,7 @@ export abstract class CityEventConverter {
     return {
       id: event.id,
       name: event.name,
-      date: event.date.toString(),
+      date: event.date.toISOString(),
       description: event.description,
       image: event.image,
       location: event.location,

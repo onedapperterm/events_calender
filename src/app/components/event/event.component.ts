@@ -36,7 +36,7 @@ export class EventComponent {
   }
 
   private setFormData():void {
-    if (this.data.date) this.eventForm.patchValue({'date': new Date(this.data.date)});
+    if (this.data.date) this.eventForm.patchValue({'date': this.data.date});
     else if (this.data.event) {
       this.eventForm.patchValue(this.data.event);
       this.mode = 'edit';
@@ -46,7 +46,7 @@ export class EventComponent {
 
   public onSubmit():void {
     this.event = {...this.event, ...this.eventForm.getRawValue()};
-    this.event.date = this.event.date.toString();
+    this.event.date = this.event.date;
     if (this.mode == 'edit') this.updateEvent();
     else this.createEvent();
   }

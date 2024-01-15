@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component'
 import { HomeCalendarComponent } from './components/home-calendar/home-calendar.component'
 import { EventCardComponent } from './components/event-card/event-card.component'
 import { LoginAdminComponent } from './login-admin/login-admin.component'
+import { EventsCarouselComponent } from './components/events-carousel/events-carousel.component';
 //MATERIAL MODULES
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatInputModule } from '@angular/material/input'
@@ -35,6 +36,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     HomeCalendarComponent,
     EventCardComponent,
     LoginAdminComponent,
+    EventsCarouselComponent,
   ],
   imports: [
     BrowserModule,

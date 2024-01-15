@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog } from '@angular/material/dialog';
+import { MockMatDialog } from 'src/app/util/mocks';
 
 import { EventCardComponent } from './event-card.component';
+
 
 describe('EventCardComponent', () => {
   let component: EventCardComponent;
@@ -8,7 +11,13 @@ describe('EventCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventCardComponent ]
+      declarations: [ EventCardComponent ],
+      providers: [
+        {
+          provide: MatDialog,
+          useClass: MockMatDialog
+        }
+      ]
     })
     .compileComponents();
 

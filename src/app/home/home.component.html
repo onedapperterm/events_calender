@@ -1,4 +1,5 @@
 <div class="home-container">
+  <app-events-carousel [events]="highlighted$ | async"></app-events-carousel>
   <div class="events-container" *ngIf="{data: events$ | async } as events">
     <mat-hint *ngIf="events.data && events.data.length == 0">No events this day</mat-hint>
     <app-event-card *ngFor="let event of events.data" [event]="event"></app-event-card>
